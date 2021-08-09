@@ -1,0 +1,154 @@
+@import url(http://fonts.googleapis.com/css?family=Poppins:400,800,700,600,300);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+h2{
+  text-align: center;  
+}
+
+body {
+  background: rgb(226, 232, 236);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 1200px;
+  margin: 40px;
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 0.25);
+}
+
+.container .left-aside {
+  position: relative;
+  background: rgb(8, 102, 139);
+  padding: 40px;
+  color: white;
+}
+
+.profileText{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(241, 241, 241, 0.5);
+}
+
+.profileText .imgBox{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.profileText .imgBox img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileText figcaption{
+  color: white;
+  font-size: 1.2em;
+  margin-top: 20px;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.5em;
+}
+
+.profileText figcaption span{
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+section{
+  padding-top: 20px;
+}
+
+.title{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+section ul{
+  position: relative;
+}
+
+section ul li{
+  position: relative;
+  list-style: none;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+section ul li .icon{
+  display: inline-block;
+  color:lightblue;
+  width: 25px;
+  font-size: 16px;
+}
+
+section ul li a{
+  color: white;
+}
+
+section ul li h5{
+  color: lightblue;
+  font-weight: 500;
+  font-size: medium;
+}
+
+section ul li h4{
+  font-weight: 300;
+}
+
+section ul li h4:nth-child(2){
+  font-weight: 500;
+  font-size: large;
+}
+
+section ul li h4:nth-child(1){
+  font-weight: 500;
+  font-size: large;
+}
+
+.container .right-aside {
+  position: relative;
+  background: white;
+  padding: 40px;
+  text-align: left;
+}
+ .about{
+   margin-bottom: 30px;
+ }
+.title2{
+  text-transform: uppercase;
+  color:rgb(8, 102, 139);
+  text-align: left;
+}
+
+h3{
+  color: rgb(0, 153, 255);
+}
