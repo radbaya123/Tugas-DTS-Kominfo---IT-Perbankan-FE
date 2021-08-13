@@ -1,0 +1,53 @@
+body{
+  min-height: 2500px;
+}
+
+#role{
+  font-size: 44px;
+}
+
+img.profile{
+  padding-top: 2rem;
+  margin-left: 4rem;
+}
+
+#home{
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+ul{
+  list-style: none;
+}
+
+.contact{
+  margin-left: -30px;
+  line-height: 40px;
+  font-size: larger;
+}
+
+.education{
+  margin-left: -30px;
+}
+
+.title{
+  color: #136223;
+}
+
+.img-thumbnail{
+  margin-left: 30px;
+}
+
+section{
+  padding-top: 2rem;
+}
+
+span.text{
+  margin: 20px;
+  color: #8695A4;
+  font-weight: 500;
+}
+
+form{
+  margin-top: 2rem;
+}
