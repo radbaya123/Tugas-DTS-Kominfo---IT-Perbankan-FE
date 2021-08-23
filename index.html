@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Konversi Suhu</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+
+    <style>
+      .container {
+        width: 80%;
+        margin-top: 3rem;
+      }
+      #date {
+        font-size: 1.5rem;
+      }
+      #time {
+        font-size: 2.5rem;
+      }
+      body {
+        background-color: rgb(202, 164, 143);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="text-center border p-md-5">
+        <div class="h4 mb-4" id="date"></div>
+        <div class="h4 mb-4" id="time"></div>
+
+        <h1 class=" p-md-2 mb-4">Temperature Converter</h1>
+        <div class="h4 p-md-4 mb-12">
+          <select name="from" id="from" onchange="select()">
+            <option value="cel">Celcius</option>
+            <option value="fah">Fahrenheit</option>
+            <option value="rea">Reamur</option>
+          </select>
+          to
+          <select name="to" id="to" onchange="select()">
+            <option value="fah">Fahrenheit</option>
+            <option value="rea">Reamur</option>
+            <option value="cel">Celcius</option>
+          </select>
+        </div>
+        <input type="number" name="kmh" id="num1" class="form-control mb-4" placeholder="Input Value" onkeyup="conv()"/>
+        <p class="h6 mb-4">=</p>
+        <input type="number" id="result" class="form-control mb-4" placeholder="Result" disabled />
+      </div>
+      <div class="container">
+        </form>
+        Change Background Color : <input class="form-control mb-4 p-1" placeholder="Your Favorite Color" id="color"/><button type="button" class="btn btn-danger" onclick="change()">Change</button>
+      </div>
+
+  </body>
+  <script src="konversi-suhu.js"></script>
+  <script>
+    //tanggal dan waktu
+    $(document).ready(function () {
+      var interval = setInterval(function () {
+        var momentNow = moment();
+        $("#date").html(momentNow.format("YYYY MMMM DD") + " " + momentNow.format("dddd"));
+        $("#time").html(momentNow.format("A hh:mm:ss"));
+      }, 100);
+    });
+
+    function select() {
+      document.getElementById("num1").value = "";
+      document.getElementById("result").value = "";
+    }
+
+    // Konversi suhu
+    const convert = new Convert();
+    function conv() {
+      if (document.getElementById("from").value == "cel") {
+        const res = convert.fromCelcius(document.getElementById("to").value, parseInt(document.getElementById("num1").value));
+        document.getElementById("result").value = res;
+      }
+      if (document.getElementById("from").value == "rea") {
+        const res = convert.fromReamur(document.getElementById("to").value, parseInt(document.getElementById("num1").value));
+        document.getElementById("result").value = res;
+      }
+      if (document.getElementById("from").value == "fah") {
+        const res = convert.fromFahrenheit(document.getElementById("to").value, parseInt(document.getElementById("num1").value));
+        document.getElementById("result").value = res;
+      }
+    }
+    // Background color
+    function change() {
+      document.body.style.backgroundColor = document.getElementById("color").value;
+    }
+  </script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"
+  ></script>
+</html>

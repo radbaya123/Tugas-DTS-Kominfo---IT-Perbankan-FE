@@ -1,0 +1,14 @@
+{
+  "name": "konversi_suhu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cel-to-cel.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
